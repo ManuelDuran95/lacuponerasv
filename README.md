@@ -2,7 +2,7 @@
 
 Proyecto de la asignatura LIS941
 
-# Instalación 
+# Instalación 🛠️
 
 Primero deberás clonar el proyecto en tu maquina local, puedes hacerlo con GitHub Desktop o desde consola ( para eso deberás de tener instalado Git [Click para descargar Git](https://git-scm.com/downloads))
 Para Ejecutar el proyecto deberás de tener instalado xampp para correr los servicios
@@ -19,7 +19,7 @@ En esta guia se clonará por medio de consola
 
 # Configuraciones iniciales ⚙
 
-1.  Inicie los servicios de wampserver o xampp
+1.  Inicie los servicios de xampp
 
 2.  Deberá de crear una base datos la cuál llamaremos **cuponera_db**
 
