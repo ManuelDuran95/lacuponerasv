@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request; // ensure we type-hint the HTTP Request, not the Facade
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistroClienteController;
 use App\Http\Controllers\RegistroEmpresaController;
