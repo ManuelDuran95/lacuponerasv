@@ -9,6 +9,9 @@ use App\Http\Controllers\OfertaController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\ReporteController;
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+
+
 
 // PÚBLICO
 Route::get('/', [OfertaController::class, 'indexPublico'])->name('ofertas.publicas');
@@ -34,7 +37,7 @@ Route::middleware(['auth','rol:USUARIO'])->group(function () {
     Route::post('/comprar/{ofertaId}', [CompraController::class, 'procesarCompra'])->name('comprar.procesar');
 
     Route::get('/mis-compras', [CompraController::class, 'misCompras'])->name('mis-compras');
-    Route::get('/factura/{compraId}', [CompraController::class, 'factura'])->name('factura.ver');
+    Route::get('/factura/{compraId}', [CompraController::class, 'factura'])->name('factura.ver');   
 });
 
 // RUTAS EMPRESA
@@ -45,6 +48,7 @@ Route::middleware(['auth','rol:EMPRESA'])->group(function () {
 
     Route::get('/empresa/ofertas/crear', [OfertaController::class, 'crear'])->name('empresa.ofertas.crear');
     Route::post('/empresa/ofertas', [OfertaController::class, 'guardar'])->name('empresa.ofertas.guardar');
+
 });
 
 // RUTAS ADMIN
@@ -66,4 +70,23 @@ Route::middleware(['auth','rol:ADMIN'])->group(function () {
     // reportes
     Route::get('/admin/reportes/resumen', [ReporteController::class, 'resumen'])
         ->name('admin.reportes.resumen');
+});
+
+// RESET PASSWORD ROUTES 
+Route::middleware('guest')->group(function () {
+    // Vista del formulario (GET)
+    Route::view('/forgot-password', 'publico.forgot-password')
+        ->name('password.request');
+    
+    // Procesar el formulario (POST)
+    Route::post('/forgot-password', function (Request $request) {
+        // Validación básica
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+        
+        // Aquí va tu lógica para enviar el correo de recuperación
+        // Por ahora solo redirigimos con un mensaje
+        return back()->with('status', 'Se ha enviado un enlace de recuperación a tu correo electrónico.');
+    })->name('password.email');
 });

@@ -50,6 +50,14 @@
                 />
             </div>
 
+                 <!-- Enlace de recuperación de contraseña -->
+            <div class="text-right">
+                <a href="{{ route('password.request') }}" 
+                   class="text-xs text-indigo-600 hover:text-indigo-700 hover:underline font-medium">
+                    ¿Olvidaste tu contraseña?
+                </a>
+            </div>
+
             <!-- Botón -->
             <button
                 type="submit"
