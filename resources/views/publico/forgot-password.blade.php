@@ -27,7 +27,7 @@
         @endif
 
         <!-- Formulario -->
-        <form method="POST" action="{{ route('password.email') }}" class="space-y-4">
+        <form method="POST" action="{{ route('password.email.real') }}" class="space-y-4">
             @csrf
 
             <!-- Correo Electrónico -->
