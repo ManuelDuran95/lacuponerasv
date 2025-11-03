@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         */
         $admin = Usuario::create([
             'usuario'            => 'admin',
-            'correo_electronico' => 'admin@cuponera.test',
+            'correo_electronico' => 'ferad358gold@gmail.com',
             'contrasena'         => Hash::make('Admin1234!'), 
             'nombre_completo'    => 'Administrador',
             'apellidos'          => 'General',
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         */
         $cliente = Usuario::create([
             'usuario'            => 'cliente1',
-            'correo_electronico' => 'cliente1@test.com',
+            'correo_electronico' => 'clientegold358@gmail.com',
             'contrasena'         => Hash::make('Cliente1234!'),
             'nombre_completo'    => 'Juan',
             'apellidos'          => 'Pérez',
