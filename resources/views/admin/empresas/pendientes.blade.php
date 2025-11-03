@@ -50,7 +50,7 @@
                                     required />
 
                                 <button type="submit"
-                                    class="w-full inline-flex justify-center rounded-md bg-green-600 px-3 py-1.5 text-white text-[11px] font-medium hover:bg-green-700">
+                                    class="w-full inline-flex justify-center rounded-md bg-green-600 px-3 py-1.5 text-white text-[11px] font-medium hover:bg-green-700 cursor-pointer">
                                     Aprobar y crear acceso
                                 </button>
                             </form>
@@ -60,7 +60,7 @@
                                   class="bg-red-50 border border-red-300 rounded-md p-3">
                                 @csrf
                                 <button type="submit"
-                                    class="w-full inline-flex justify-center rounded-md bg-red-600 px-3 py-1.5 text-white text-[11px] font-medium hover:bg-red-700">
+                                    class="w-full inline-flex justify-center rounded-md bg-red-600 px-3 py-1.5 text-white text-[11px] font-medium hover:bg-red-700 cursor-pointer">
                                     Rechazar
                                 </button>
                             </form>

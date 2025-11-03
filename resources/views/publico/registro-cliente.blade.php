@@ -12,55 +12,71 @@
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
             <input type="text" name="usuario" value="{{ old('usuario') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
             <input type="email" name="correo_electronico" value="{{ old('correo_electronico') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
             <input type="password" name="contrasena"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Confirmar contraseña</label>
             <input type="password" name="contrasena_confirmation"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
             <input type="text" name="nombre_completo" value="{{ old('nombre_completo') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Apellidos</label>
             <input type="text" name="apellidos" value="{{ old('apellidos') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">DUI</label>
             <input type="text" name="dui" value="{{ old('dui') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
         </div>
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de nacimiento</label>
             <input type="date" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+                class="w-full rounded-md text-sm bg-white
+         ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-500
+         focus:outline-none" required />
             <p class="text-[11px] text-gray-500 mt-1">Debes ser mayor de 18 años</p>
         </div>
 
         <div class="md:col-span-2">
             <button type="submit"
-                class="w-full inline-flex justify-center rounded-md bg-indigo-600 px-4 py-2 text-white text-sm font-medium hover:bg-indigo-700">
+                class="w-full inline-flex justify-center rounded-md bg-indigo-600 px-4 py-2 text-white text-sm font-medium hover:bg-indigo-700 cursor-pointer">
                 Crear cuenta
             </button>
         </div>
