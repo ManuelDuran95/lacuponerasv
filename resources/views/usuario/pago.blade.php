@@ -51,7 +51,7 @@
         </div>
 
         <button type="submit"
-            class="w-full inline-flex justify-center rounded-md bg-indigo-600 px-4 py-2 text-white text-sm font-medium hover:bg-indigo-700">
+            class="w-full inline-flex justify-center rounded-md bg-indigo-600 px-4 py-2 text-white text-sm font-medium hover:bg-indigo-700 cursor-pointer">
             Confirmar compra
         </button>
     </form>
