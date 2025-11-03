@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'nit'                 => '0614-123456-001-1',
             'direccion'           => 'Col. Centro, San Salvador',
             'telefono'            => '2222-0000',
-            'correo_electronico'  => 'contacto@ladona.test',
+            'correo_electronico'  => 'ladonaempresagold1@gmail.com',
             'usuario'             => 'ladona',
             'contrasena'          => $passwordEmpresaHash,
             'estado'              => 'APROBADA',

@@ -8,6 +8,7 @@ use Illuminate\Auth\Passwords\CanResetPassword as CanResetPasswordTrait;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use App\Notifications\AdminResetPassword;
+use App\Notifications\EmpresaResetPassword;
 
 class Usuario extends Authenticatable implements CanResetPasswordContract
 {
@@ -54,9 +55,15 @@ class Usuario extends Authenticatable implements CanResetPasswordContract
     {
         if ($this->rol === 'ADMIN') {
             $this->notify(new AdminResetPassword($token));
-        } else {
-            $this->notify(new ResetPasswordNotification($token));
+            return;
         }
+
+        if ($this->rol === 'EMPRESA') {
+            $this->notify(new EmpresaResetPassword($token));
+            return;
+        }
+
+        $this->notify(new ResetPasswordNotification($token));
     }
 
     public function empresa() {

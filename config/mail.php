@@ -64,6 +64,20 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
+        // Mailer específico para EMPRESA
+        'empresa' => [
+            'transport' => 'smtp',
+            'scheme' => env('MAIL_EMPRESA_SCHEME', env('MAIL_SCHEME')),
+            'url' => env('MAIL_EMPRESA_URL', env('MAIL_URL')),
+            'host' => env('MAIL_EMPRESA_HOST', env('MAIL_HOST', '127.0.0.1')),
+            'port' => env('MAIL_EMPRESA_PORT', env('MAIL_PORT', 2525)),
+            'encryption' => env('MAIL_EMPRESA_ENCRYPTION', env('MAIL_ENCRYPTION', null)),
+            'username' => env('MAIL_EMPRESA_USERNAME', env('MAIL_USERNAME')),
+            'password' => env('MAIL_EMPRESA_PASSWORD', env('MAIL_PASSWORD')),
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
