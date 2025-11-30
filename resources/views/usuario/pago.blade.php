@@ -31,10 +31,19 @@
                 class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
         </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" 
+            integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Número de tarjeta</label>
-            <input type="text" name="numero_tarjeta" value="{{ old('numero_tarjeta') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+            <input type="text" 
+                name="numero_tarjeta" 
+                id="numero_tarjeta"
+                value="{{ old('numero_tarjeta') }}"
+                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                placeholder="1234 5678 9012 3456"
+                required />
         </div>
 
         <div class="grid grid-cols-2 gap-4">
@@ -56,4 +65,16 @@
         </button>
     </form>
 </div>
+
+<script>
+    var cleave = new Cleave('#numero_tarjeta', {
+    creditCard: true,
+    onCreditCardTypeChanged: function (type) {
+        // You can use this callback to update your UI, e.g., display the card logo
+        console.log('Card type:', type); 
+        document.getElementById('card-type-icon').innerHTML = 'Type: ' + type;
+    }
+});
+</script>
+
 @endsection

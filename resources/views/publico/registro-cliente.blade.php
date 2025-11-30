@@ -47,9 +47,13 @@
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">DUI</label>
-            <input type="text" name="dui" value="{{ old('dui') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+            <input type="text" name="dui" id="dui" value="{{ old('dui') }}"
+                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                placeholder="00000000-0"
+                maxlength="10"
+                required />
         </div>
+
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de nacimiento</label>
@@ -74,4 +78,35 @@
         </p>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const duiInput = document.getElementById('dui');
+    
+    duiInput.addEventListener('input', function(e) {
+        // Remover todo excepto números
+        let value = e.target.value.replace(/\D/g, '');
+        
+        // Aplicar formato 00000000-0
+        if (value.length <= 8) {
+            e.target.value = value;
+        } else if (value.length === 9) {
+            e.target.value = value.substring(0, 8) + '-' + value.substring(8, 9);
+        }
+    });
+    
+    // También manejar el pegado de texto
+    duiInput.addEventListener('paste', function(e) {
+        setTimeout(function() {
+            let value = duiInput.value.replace(/\D/g, '');
+            if (value.length <= 8) {
+                duiInput.value = value;
+            } else if (value.length === 9) {
+                duiInput.value = value.substring(0, 8) + '-' + value.substring(8, 9);
+            }
+        }, 0);
+    });
+});
+</script>
+
 @endsection

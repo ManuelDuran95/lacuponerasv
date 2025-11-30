@@ -20,9 +20,13 @@
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">NIT</label>
-            <input type="text" name="nit" value="{{ old('nit') }}"
-                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm" required />
+            <input type="text" name="nit" id="nit" value="{{ old('nit') }}"
+                class="w-full rounded-md border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                 placeholder="0000-000000-000-0"
+                    maxlength="17"
+                    required />
         </div>
+
 
         <div class="md:col-span-1">
             <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
@@ -69,4 +73,24 @@
         </div>
     </form>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const nitInput = document.getElementById('nit');
+    
+    nitInput.addEventListener('input', function(e) {
+        // Remover todo excepto números
+        let value = e.target.value.replace(/\D/g, '');
+        
+        // Aplicar formato 0000-000000-000-0
+        if (value.length > 0) {
+            let formatted = value.substring(0, 4);
+            if (value.length > 4) formatted += '-' + value.substring(4, 10);
+            if (value.length > 10) formatted += '-' + value.substring(10, 13);
+            if (value.length > 13) formatted += '-' + value.substring(13, 14);
+            e.target.value = formatted;
+        }
+    });
+});
+</script>
 @endsection
