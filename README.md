@@ -14,7 +14,8 @@ En esta guia se clonará por medio de consola
 2.  Una vez dentro de la carpeta, ejecuta el siguiente comando en tu terminal para clonar el repositorio
 
 > `git clone https://github.com/ManuelDuran95/lacuponerasv.git` \
-> `git checkout fase-1`
+> `cd lacuponerasv` \
+> `git checkout fase-2`
 
 3. Luego abre Visual Studio Code y abre el la carpeta clonada (lacuponerasv)
 
