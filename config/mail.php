@@ -43,8 +43,23 @@ return [
             'url' => env('MAIL_URL'),
             'host' => env('MAIL_HOST', '127.0.0.1'),
             'port' => env('MAIL_PORT', 2525),
+            'encryption' => env('MAIL_ENCRYPTION', null),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+        ],
+
+        // Mailer secundario para flujos de ADMIN (ej. reset de contraseña)
+        'admin' => [
+            'transport' => 'smtp',
+            'scheme' => env('MAIL_ADMIN_SCHEME', env('MAIL_SCHEME')),
+            'url' => env('MAIL_ADMIN_URL', env('MAIL_URL')),
+            'host' => env('MAIL_ADMIN_HOST', env('MAIL_HOST', '127.0.0.1')),
+            'port' => env('MAIL_ADMIN_PORT', env('MAIL_PORT', 2525)),
+            'encryption' => env('MAIL_ADMIN_ENCRYPTION', env('MAIL_ENCRYPTION', null)),
+            'username' => env('MAIL_ADMIN_USERNAME', env('MAIL_USERNAME')),
+            'password' => env('MAIL_ADMIN_PASSWORD', env('MAIL_PASSWORD')),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
