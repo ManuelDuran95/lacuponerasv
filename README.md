@@ -30,10 +30,10 @@ En esta guia se clonará por medio de consola
 4. Renombar el archivo .env.example a .env
 
 5.  Pasos levantar la aplicacion en local:
-    > `composer install`
-    > `npm install`
-    > `npm run build`
-    > `php artisan key:generate`
+    > `composer install` \ 
+    > `npm install` \
+    > `npm run build` \
+    > `php artisan key:generate` \
 
 6.  Para correr las migraciones y seeders ejecute el siguiente comando
     > `php artisan migrate --seed`
