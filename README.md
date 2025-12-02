@@ -51,3 +51,6 @@ Una vez hechas las configuraciones iniciales ejecutaremos el proyecto
 > `php artisan serve --no-reload`
 
 4. Se mostrara la página web, para abrirla ubicarse encima de la ruta http://127.0.0.1:8000 y presionar ctrl + click
+Nota:
+Debido a que los cupones expiraron se deben ejecutar 
+>`UPDATE ofertas SET fecha_fin = '2025-12-15';`
